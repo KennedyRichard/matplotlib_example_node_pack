@@ -3,6 +3,12 @@
 
 from matplotlib.figure import Figure
 
+main_callable = Figure.savefig
+call_format = 'Figure.savefig'
+
+third_party_import_text = 'from matplotlib.figure import Figure'
+
+
 def _save_figure(
 
       figure: Figure,
@@ -18,23 +24,6 @@ def _save_figure(
       backend: 'python_literal' = None,
       **kwargs
 
-    ):
+    ): pass
 
-    Figure.savefig(
-             figure,
-             fname=fname,
-             format=format,
-             dpi=dpi,
-             metadata=metadata,
-             bbox_inches=bbox_inches,
-             pad_inches=pad_inches,
-             face_color=face_color,
-             edge_color=edge_color,
-             backend=backend,
-             **kwargs
-           )
-
-main_callable = Figure.savefig
 signature_callable = _save_figure
-call_format = 'Figure.savefig'
-third_party_import_text = 'from matplotlib.figure import Figure'
