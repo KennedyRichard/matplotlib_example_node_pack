@@ -61,7 +61,7 @@ maintain_fps = Clock().tick
 MODE = 'RGB'
 
 class ImageViewer:
-    """Manages the loop of the view_image() node."""
+    """Manages the loop of the view_figure() node."""
 
     def __init__(self):
 
@@ -419,7 +419,14 @@ class ImageViewer:
 
     view_figure.dismiss_exec_time_tracking = True
 
+### now, instantiate the ImageViewer and use the view_figure
+### method as the main callable
 main_callable = ImageViewer().view_figure
+
+### to make it so the callable can be found in this module when
+### the node layout is exported as a python script, make sure
+### it can be found using its own name
+view_figure = main_callable
 
 ### utility function
 
