@@ -419,14 +419,15 @@ class ImageViewer:
 
     view_figure.dismiss_exec_time_tracking = True
 
-### now, instantiate the ImageViewer and use the view_figure
-### method as the main callable
-main_callable = ImageViewer().view_figure
-
-### to make it so the callable can be found in this module when
-### the node layout is exported as a python script, make sure
-### it can be found using its own name
-view_figure = main_callable
+### finally, we just need to instantiate the ImageViewer
+### and use the view_figure method as the main callable;
+###
+### note that we also make it so the callable can be found in
+### this module using its own name, that is, 'view_figure';
+###
+### we do so because when the node layout is exported as a python
+### script, its name is used to find the callable
+main_callable = view_figure = ImageViewer().view_figure
 
 ### utility function
 
