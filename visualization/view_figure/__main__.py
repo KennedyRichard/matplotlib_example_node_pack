@@ -34,7 +34,7 @@ from pygame.time import Clock
 
 from pygame.event import get as get_events
 
-from pygame.image import fromstring
+from pygame.image import frombytes
 
 from pygame.draw import rect as draw_rect
 
@@ -382,7 +382,7 @@ class ImageViewer:
         raw_data = canvas.tostring_rgb()
         size     = canvas.get_width_height()
 
-        image_surf = fromstring(
+        image_surf = frombytes(
                        raw_data,
                        size,
                        MODE,
