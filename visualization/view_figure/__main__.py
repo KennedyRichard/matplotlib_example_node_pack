@@ -58,7 +58,7 @@ Y_SCROLLING_SPEED = 20
 ### obtain fps maintaining operation
 maintain_fps = Clock().tick
 
-MODE = 'RGB'
+MODE = 'RGBA'
 
 class ImageViewer:
     """Manages the loop of the view_figure() node."""
@@ -379,7 +379,7 @@ class ImageViewer:
         canvas = figure.canvas
         canvas.draw()
 
-        raw_data = canvas.tostring_rgb()
+        raw_data = bytes(canvas.buffer_rgba())
         size     = canvas.get_width_height()
 
         image_surf = frombytes(

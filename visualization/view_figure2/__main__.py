@@ -57,7 +57,7 @@ def view_figure2(
     canvas = figure.canvas
     canvas.draw()
 
-    raw_data = canvas.tostring_rgb()
+    raw_data = bytes(canvas.buffer_rgba())
     size     = canvas.get_width_height()
 
     full_surf = frombytes(
@@ -66,7 +66,7 @@ def view_figure2(
                   size,
 
                   # image mode
-                  'RGB',
+                  'RGBA',
 
                 )
 
